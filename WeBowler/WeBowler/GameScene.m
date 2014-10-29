@@ -14,6 +14,15 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     GUTTER2Cat = 1 << 2, // 0100 = 3
     EdgeCat = 1 << 3, // 1000 = 4
     Pin1Cat = 1 << 4, // 1000 = 5
+    Pin2Cat = 1 << 5, // 1000 = 6
+    Pin3Cat = 1 << 6, // 1000 = 7
+    Pin4Cat = 1 << 7, // 1000 = 8
+    Pin5Cat = 1 << 8, // 1000 = 9
+    Pin6Cat = 1 << 9, // 1000 = 10
+    Pin7Cat = 1 << 10, // 1000 = 11
+    Pin8Cat = 1 << 11, // 1000 = 12
+    Pin9Cat = 1 << 12, // 1000 = 13
+    Pin10Cat = 1 << 13, // 1000 = 14
 };
 
 @interface GameScene ()<SKPhysicsContactDelegate>
@@ -313,6 +322,143 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin1.position = CGPointMake(self.size.width/2, 600);
     
     [self addChild:pin1];
+    
+    SKSpriteNode *pin2 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin2.name = @"pin2";
+    
+    pin2.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin2.size.width/2];
+    pin2.physicsBody.dynamic = YES;
+    pin2.physicsBody.restitution = 1.0;
+    pin2.physicsBody.categoryBitMask = Pin1Cat;
+    pin2.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin2.physicsBody.affectedByGravity = NO;
+    
+    pin2.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin2];
+    
+    
+    SKSpriteNode *pin3 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin3.name = @"pin3";
+    
+    pin3.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin3.size.width/2];
+    pin3.physicsBody.dynamic = YES;
+    pin3.physicsBody.restitution = 1.0;
+    pin3.physicsBody.categoryBitMask = Pin1Cat;
+    pin3.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin3.physicsBody.affectedByGravity = NO;
+    
+    pin3.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin3];
+    
+    
+    SKSpriteNode *pin4 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin4.name = @"pin4";
+    
+    pin4.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin4.size.width/2];
+    pin4.physicsBody.dynamic = YES;
+    pin4.physicsBody.restitution = 1.0;
+    pin4.physicsBody.categoryBitMask = Pin1Cat;
+    pin4.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin4.physicsBody.affectedByGravity = NO;
+    
+    pin4.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin4];
+    
+    SKSpriteNode *pin5 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin5.name = @"pin5";
+    
+    pin5.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin5.size.width/2];
+    pin5.physicsBody.dynamic = YES;
+    pin5.physicsBody.restitution = 1.0;
+    pin5.physicsBody.categoryBitMask = Pin1Cat;
+    pin5.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin5.physicsBody.affectedByGravity = NO;
+    
+    pin5.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin5];
+    
+    SKSpriteNode *pin6 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin6.name = @"pin6";
+    
+    pin6.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin6.size.width/2];
+    pin6.physicsBody.dynamic = YES;
+    pin6.physicsBody.restitution = 1.0;
+    pin6.physicsBody.categoryBitMask = Pin1Cat;
+    pin6.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin6.physicsBody.affectedByGravity = NO;
+    
+    pin6.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin6];
+    
+    SKSpriteNode *pin7 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin7.name = @"pin7";
+    
+    pin7.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin7.size.width/2];
+    pin7.physicsBody.dynamic = YES;
+    pin7.physicsBody.restitution = 1.0;
+    pin7.physicsBody.categoryBitMask = Pin1Cat;
+    pin7.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin7.physicsBody.affectedByGravity = NO;
+    
+    pin7.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin7];
+    
+    SKSpriteNode *pin8 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin8.name = @"pin8";
+    
+    pin8.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin8.size.width/2];
+    pin8.physicsBody.dynamic = YES;
+    pin8.physicsBody.restitution = 1.0;
+    pin8.physicsBody.categoryBitMask = Pin1Cat;
+    pin8.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin8.physicsBody.affectedByGravity = NO;
+    
+    pin8.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin8];
+    
+    SKSpriteNode *pin9 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin9.name = @"pin9";
+    
+    pin9.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin9.size.width/2];
+    pin9.physicsBody.dynamic = YES;
+    pin9.physicsBody.restitution = 1.0;
+    pin9.physicsBody.categoryBitMask = Pin1Cat;
+    pin9.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin9.physicsBody.affectedByGravity = NO;
+    
+    pin9.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin9];
+    
+    SKSpriteNode *pin10 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin10.name = @"pin10";
+    
+    pin10.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin10.size.width/2];
+    pin10.physicsBody.dynamic = YES;
+    pin10.physicsBody.restitution = 1.0;
+    pin10.physicsBody.categoryBitMask = Pin1Cat;
+    pin10.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin10.physicsBody.affectedByGravity = NO;
+    
+    pin10.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin10];
 }
 
 
