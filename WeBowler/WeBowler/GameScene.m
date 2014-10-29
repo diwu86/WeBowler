@@ -199,11 +199,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     SKNode* node = [self findBBall];
     
     //If bball is off the screen, add another
-<<<<<<< HEAD
-    if(node.position.y < 0 || node.position.y > 1024 || node.position.x < 0 || node.position.x > 768)
-=======
     if(node.position.y < 0 || node.position.y > 368 || node.position.x < 0 || node.position.x > 1024)
->>>>>>> FETCH_HEAD
     {
         [node removeFromParent];
         [self addBBall];
@@ -242,7 +238,6 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
 {
     SKSpriteNode *gutter1 = [SKSpriteNode spriteNodeWithTexture:_gutter1Texture];
     SKSpriteNode *gutter2 = [SKSpriteNode spriteNodeWithTexture:_gutter2Texture];
-    gutter1.si
     
     gutter1.name = @"gutter1";
     
