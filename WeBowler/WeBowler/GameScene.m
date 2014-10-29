@@ -249,7 +249,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     gutter1.physicsBody.categoryBitMask = GUTTER1Cat;
     gutter1.physicsBody.collisionBitMask = BBALLCat | EdgeCat;
     gutter1.physicsBody.contactTestBitMask = BBALLCat;
-    gutter1.position = CGPointMake(400, 100);
+    gutter1.position = CGPointMake(224, 100);
     
     
     gutter2.name = @"gutter2";

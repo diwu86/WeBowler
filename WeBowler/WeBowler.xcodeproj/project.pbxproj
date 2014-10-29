@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E07F08D1A013F1600040BE1 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E07F08C1A013F1600040BE1 /* Score.m */; };
+		2E07F08E1A013F1600040BE1 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E07F08C1A013F1600040BE1 /* Score.m */; };
 		D41BF6FD1A0009E700E0EB47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BF6FC1A0009E700E0EB47 /* main.m */; };
 		D41BF7001A0009E700E0EB47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BF6FF1A0009E700E0EB47 /* AppDelegate.m */; };
 		D41BF7031A0009E700E0EB47 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BF7021A0009E700E0EB47 /* GameScene.m */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E07F08B1A013F1600040BE1 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		2E07F08C1A013F1600040BE1 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		D41BF6F71A0009E700E0EB47 /* WeBowler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeBowler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41BF6FB1A0009E700E0EB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D41BF6FC1A0009E700E0EB47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				D41BF70E1A0009E700E0EB47 /* LaunchScreen.xib */,
 				D466397E1A01349500AC953E /* Resources */,
 				D41BF6FA1A0009E700E0EB47 /* Supporting Files */,
+				2E07F08B1A013F1600040BE1 /* Score.h */,
+				2E07F08C1A013F1600040BE1 /* Score.m */,
 			);
 			path = WeBowler;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E07F08D1A013F1600040BE1 /* Score.m in Sources */,
 				D41BF7081A0009E700E0EB47 /* GameViewController.m in Sources */,
 				D41BF7001A0009E700E0EB47 /* AppDelegate.m in Sources */,
 				D41BF7031A0009E700E0EB47 /* GameScene.m in Sources */,
@@ -257,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E07F08E1A013F1600040BE1 /* Score.m in Sources */,
 				D41BF71C1A0009E700E0EB47 /* WeBowlerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
