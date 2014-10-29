@@ -176,7 +176,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     // Add Label
     _hitLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier Bold"];
-    _hitLabel.position = CGPointMake(100, 700);
+    _hitLabel.position = CGPointMake(100, 950);
     _hitLabel.fontSize = 30.0;
     _hitLabel.fontColor = [SKColor blackColor];
     _hitLabel.text = @"Hits: 0";
@@ -208,7 +208,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     SKNode* node = [self findBBall];
     
     //If bball is off the screen, add another
-    if(node.position.y < 0 || node.position.y > 368 || node.position.x < 0 || node.position.x > 1024)
+    if(node.position.y < 0 || node.position.y > 1024 || node.position.x < 0 || node.position.x > 768)
     {
         [node removeFromParent];
         [self addBBall];
@@ -258,7 +258,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     gutter1.physicsBody.categoryBitMask = GUTTER1Cat;
     gutter1.physicsBody.collisionBitMask = BBALLCat | EdgeCat;
     gutter1.physicsBody.contactTestBitMask = BBALLCat;
-    gutter1.position = CGPointMake(224, 100);
+    gutter1.position = CGPointMake(100, 0);
     
     
     gutter2.name = @"gutter2";
@@ -271,7 +271,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     gutter2.physicsBody.categoryBitMask = GUTTER1Cat;
     gutter2.physicsBody.collisionBitMask = BBALLCat | EdgeCat;
     gutter2.physicsBody.contactTestBitMask = BBALLCat;
-    gutter2.position = CGPointMake(800, 100);
+    gutter2.position = CGPointMake(668, 0);
     
     //gutter1.position = CGPointMake(gutter1.size.width/2, gutter1.size.height/2);
     //gutter2.position = CGPointMake(gutter1.size.width/2, gutter1.size.height/2);

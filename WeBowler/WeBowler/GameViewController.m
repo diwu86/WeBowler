@@ -48,7 +48,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    StartScene* startScene = [[StartScene alloc] initWithSize:CGSizeMake(1024,768)];
+    StartScene* startScene = [[StartScene alloc] initWithSize:CGSizeMake(768,1024)];
     SKView *spriteView = (SKView *) self.view;
     [spriteView presentScene: startScene];
 }
