@@ -17,6 +17,7 @@
 		D41BF7101A0009E700E0EB47 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41BF70E1A0009E700E0EB47 /* LaunchScreen.xib */; };
 		D41BF71C1A0009E700E0EB47 /* WeBowlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BF71B1A0009E700E0EB47 /* WeBowlerTests.m */; };
 		D466397B1A01217400AC953E /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D466397A1A01217400AC953E /* StartScene.m */; };
+		D46639801A01349500AC953E /* gameTextures.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D466397F1A01349500AC953E /* gameTextures.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D41BF71B1A0009E700E0EB47 /* WeBowlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeBowlerTests.m; sourceTree = "<group>"; };
 		D46639791A01217400AC953E /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		D466397A1A01217400AC953E /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
+		D466397F1A01349500AC953E /* gameTextures.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = gameTextures.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				D41BF7091A0009E700E0EB47 /* Main.storyboard */,
 				D41BF70C1A0009E700E0EB47 /* Images.xcassets */,
 				D41BF70E1A0009E700E0EB47 /* LaunchScreen.xib */,
+				D466397E1A01349500AC953E /* Resources */,
 				D41BF6FA1A0009E700E0EB47 /* Supporting Files */,
 			);
 			path = WeBowler;
@@ -130,6 +133,14 @@
 				D41BF71A1A0009E700E0EB47 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D466397E1A01349500AC953E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D466397F1A01349500AC953E /* gameTextures.atlas */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46639801A01349500AC953E /* gameTextures.atlas in Resources */,
 				D41BF7101A0009E700E0EB47 /* LaunchScreen.xib in Resources */,
 				D41BF70D1A0009E700E0EB47 /* Images.xcassets in Resources */,
 				D41BF7051A0009E700E0EB47 /* GameScene.sks in Resources */,
