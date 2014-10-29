@@ -167,7 +167,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     // Add Label
     _hitLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier Bold"];
-    _hitLabel.position = CGPointMake(100, 700);
+    _hitLabel.position = CGPointMake(100, 950);
     _hitLabel.fontSize = 30.0;
     _hitLabel.fontColor = [SKColor blackColor];
     _hitLabel.text = @"Hits: 0";
@@ -199,7 +199,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     SKNode* node = [self findBBall];
     
     //If bball is off the screen, add another
-    if(node.position.y < 0 || node.position.y > 368 || node.position.x < 0 || node.position.x > 1024)
+    if(node.position.y < 0 || node.position.y > 1024 || node.position.x < 0 || node.position.x > 768)
     {
         [node removeFromParent];
         [self addBBall];
