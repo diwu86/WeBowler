@@ -10,4 +10,11 @@
 
 @interface GameScene : SKScene
 
+#ifndef GAME_SCENE_H
+#define GAME_SCENE_H
+
+
+#define BBALL_THRUST 100
+
+#endif
 @end

@@ -16,6 +16,7 @@
 		D41BF70D1A0009E700E0EB47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41BF70C1A0009E700E0EB47 /* Images.xcassets */; };
 		D41BF7101A0009E700E0EB47 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41BF70E1A0009E700E0EB47 /* LaunchScreen.xib */; };
 		D41BF71C1A0009E700E0EB47 /* WeBowlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D41BF71B1A0009E700E0EB47 /* WeBowlerTests.m */; };
+		D466397B1A01217400AC953E /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D466397A1A01217400AC953E /* StartScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		D41BF7151A0009E700E0EB47 /* WeBowlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeBowlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41BF71A1A0009E700E0EB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D41BF71B1A0009E700E0EB47 /* WeBowlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeBowlerTests.m; sourceTree = "<group>"; };
+		D46639791A01217400AC953E /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		D466397A1A01217400AC953E /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				D41BF7041A0009E700E0EB47 /* GameScene.sks */,
 				D41BF7061A0009E700E0EB47 /* GameViewController.h */,
 				D41BF7071A0009E700E0EB47 /* GameViewController.m */,
+				D46639791A01217400AC953E /* StartScene.h */,
+				D466397A1A01217400AC953E /* StartScene.m */,
 				D41BF7091A0009E700E0EB47 /* Main.storyboard */,
 				D41BF70C1A0009E700E0EB47 /* Images.xcassets */,
 				D41BF70E1A0009E700E0EB47 /* LaunchScreen.xib */,
@@ -231,6 +236,7 @@
 				D41BF7081A0009E700E0EB47 /* GameViewController.m in Sources */,
 				D41BF7001A0009E700E0EB47 /* AppDelegate.m in Sources */,
 				D41BF7031A0009E700E0EB47 /* GameScene.m in Sources */,
+				D466397B1A01217400AC953E /* StartScene.m in Sources */,
 				D41BF6FD1A0009E700E0EB47 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +430,7 @@
 				D41BF7211A0009E700E0EB47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D41BF7221A0009E700E0EB47 /* Build configuration list for PBXNativeTarget "WeBowlerTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				D41BF7241A0009E700E0EB47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

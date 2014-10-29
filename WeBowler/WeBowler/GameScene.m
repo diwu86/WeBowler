@@ -8,6 +8,17 @@
 
 #import "GameScene.h"
 
+typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
+    PMHoopyCat = 1 << 0, // 0001 = 1
+    PMZombieCat = 1 << 1, // 0010 = 2
+    PMEdgeCat = 1 << 2, // 0100 = 4
+};
+
+@interface GameScene ()<SKPhysicsContactDelegate>
+@property BOOL contentCreated;
+@end
+
+
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {

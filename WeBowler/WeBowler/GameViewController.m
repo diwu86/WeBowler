@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "StartScene.h"
 
 @implementation SKScene (Unarchive)
 
@@ -33,20 +34,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SKView *spriteView = (SKView *) self.view;
+    spriteView.showsDrawCount = YES;
+    spriteView.showsNodeCount = YES;
+    spriteView.showsFPS = YES;
+}
 
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    /* Sprite Kit applies additional optimizations to improve rendering performance */
-    skView.ignoresSiblingOrder = YES;
-    
-    // Create and configure the scene.
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
+- (void) viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    StartScene* startScene = [[StartScene alloc] initWithSize:CGSizeMake(1024,768)];
+    SKView *spriteView = (SKView *) self.view;
+    [spriteView presentScene: startScene];
 }
 
 - (BOOL)shouldAutorotate
@@ -67,10 +71,6 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
 }
 
 @end
