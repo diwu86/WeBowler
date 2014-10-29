@@ -10,6 +10,8 @@
 
 @interface Score : NSObject
 
+- (void) AddStrikeToScore;
+
 - (void) AddFrameToScore:(NSInteger)first secondThrow:(NSInteger)second;
 
 -(NSInteger) GetScore;
