@@ -167,8 +167,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     // Add Label
     _hitLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier Bold"];
-    _hitLabel.position = CGPointMake(100, 900);
-    _hitLabel.fontSize = 40.0;
+    _hitLabel.position = CGPointMake(100, 700);
+    _hitLabel.fontSize = 30.0;
     _hitLabel.fontColor = [SKColor blackColor];
     _hitLabel.text = @"Hits: 0";
     [self addChild:_hitLabel];
