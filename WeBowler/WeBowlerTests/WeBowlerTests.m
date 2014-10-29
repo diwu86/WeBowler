@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "Score.h"
 
 @interface WeBowlerTests : XCTestCase
 
@@ -35,6 +36,14 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testStandardScoring
+{
+    Score *score = [[Score alloc] init];
+    [score AddFrameToScore:3 secondThrow:5];
+    NSInteger total = [score GetScore];
+    XCTAssert(total == 8);
 }
 
 @end
