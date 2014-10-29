@@ -14,7 +14,7 @@
 #define GAME_SCENE_H
 
 
-#define BBALL_THRUST 100
+#define BBALL_THRUST 200
 
 #endif
 @end
