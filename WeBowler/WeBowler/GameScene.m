@@ -13,6 +13,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     GUTTER1Cat = 1 << 1, // 0010 = 2
     GUTTER2Cat = 1 << 2, // 0100 = 3
     EdgeCat = 1 << 3, // 1000 = 4
+    Pin1Cat = 1 << 4, // 1000 = 5
 };
 
 @interface GameScene ()<SKPhysicsContactDelegate>
@@ -28,6 +29,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     SKTexture* _gutter1Texture;
     SKTexture* _gutter2Texture;
     SKLabelNode * _hitLabel;
+    SKTexture* _pin1Texture;
     int _hits;
 }
 
@@ -135,6 +137,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     _bballTexture = [_atlas textureNamed:@"red_ball.png"];
     _gutter1Texture = [_atlas textureNamed:@"gutter1.png"];
     _gutter2Texture = [_atlas textureNamed:@"gutter1.png"];
+    _pin1Texture = [_atlas textureNamed:@"pin.png"];
     _hits = 0;
     
     self.backgroundColor = [SKColor blackColor];
@@ -159,6 +162,9 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     // Add BBall
     [self addBBall];
     
+    // Add Pins
+    [self addPins];
+    
     // Add Label
     _hitLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier Bold"];
     _hitLabel.position = CGPointMake(100, 900);
@@ -172,6 +178,14 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
                                                  [SKAction waitForDuration:2]
                                                  ]];
     [self runAction: [SKAction repeatActionForever:readdBBALL]];
+    
+    
+    SKAction *readPins = [SKAction sequence: @[
+                                                 [SKAction performSelector:@selector(readPins) onTarget:self],
+                                                 [SKAction waitForDuration:0]
+                                                 ]];
+    [self runAction: [SKAction repeatActionForever:readPins]];
+
 }
 
 -(void) addBackground
@@ -185,7 +199,11 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     SKNode* node = [self findBBall];
     
     //If bball is off the screen, add another
+<<<<<<< HEAD
     if(node.position.y < 0 || node.position.y > 1024 || node.position.x < 0 || node.position.x > 768)
+=======
+    if(node.position.y < 0 || node.position.y > 368 || node.position.x < 0 || node.position.x > 1024)
+>>>>>>> FETCH_HEAD
     {
         [node removeFromParent];
         [self addBBall];
@@ -258,6 +276,50 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
 
 }
+
+-(void)readPins
+{
+    SKNode* pin_node1 = [self findPin:1];
+    //SKNode* pin_node2 = [self findPin:2];
+    //SKNode* pin_node3 = [self findPin:3];
+    //SKNode* pin_node4 = [self findPin:4];
+    //SKNode* pin_node5 = [self findPin:5];
+    
+    //If oin is off the screen remove it
+    if(pin_node1.position.y < 0 || pin_node1.position.y > 768 || pin_node1.position.x < 0 || pin_node1.position.x > 1024)
+    {
+        [pin_node1 removeFromParent];
+    }
+    
+}
+
+-(SKNode *) findPin: (int) number
+{
+    __block SKNode *pin1 = nil;
+    [self enumerateChildNodesWithName:@"pin1" usingBlock:^(SKNode *node, BOOL *stop) {
+        pin1 = node;
+    }];
+    return pin1;
+}
+
+-(void)addPins
+{
+    SKSpriteNode *pin1 = [SKSpriteNode spriteNodeWithTexture:_pin1Texture];
+    pin1.name = @"pin1";
+    
+    pin1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin1.size.width/2];
+    pin1.physicsBody.dynamic = YES;
+    pin1.physicsBody.restitution = 1.0;
+    pin1.physicsBody.categoryBitMask = Pin1Cat;
+    pin1.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    
+    pin1.physicsBody.affectedByGravity = NO;
+    
+    pin1.position = CGPointMake(self.size.width/2, 600);
+    
+    [self addChild:pin1];
+}
+
 
 
 
