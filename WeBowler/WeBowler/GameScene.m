@@ -238,7 +238,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     bball.physicsBody.affectedByGravity = NO;
     
-    bball.position = CGPointMake(self.size.width/2, 50);
+    bball.position = CGPointMake(self.size.width/2, 100);
     
     [self addChild:bball];
 }
@@ -319,7 +319,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin1.physicsBody.affectedByGravity = NO;
     
-    pin1.position = CGPointMake(self.size.width/2, 600);
+    pin1.position = CGPointMake(self.size.width/2, 700);
     
     [self addChild:pin1];
     
@@ -334,7 +334,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin2.physicsBody.affectedByGravity = NO;
     
-    pin2.position = CGPointMake(self.size.width/2 - 50, 660);
+    pin2.position = CGPointMake(self.size.width/2 - 50, 760);
     
     [self addChild:pin2];
     
@@ -350,7 +350,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin3.physicsBody.affectedByGravity = NO;
     
-    pin3.position = CGPointMake(self.size.width/2 + 50, 660);
+    pin3.position = CGPointMake(self.size.width/2 + 50, 760);
     
     [self addChild:pin3];
     
@@ -366,7 +366,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin4.physicsBody.affectedByGravity = NO;
     
-    pin4.position = CGPointMake(self.size.width/2 - 100, 720);
+    pin4.position = CGPointMake(self.size.width/2 - 100, 820);
     
     [self addChild:pin4];
     
@@ -381,7 +381,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin5.physicsBody.affectedByGravity = NO;
     
-    pin5.position = CGPointMake(self.size.width/2, 720);
+    pin5.position = CGPointMake(self.size.width/2, 820);
     
     [self addChild:pin5];
     
@@ -396,7 +396,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin6.physicsBody.affectedByGravity = NO;
     
-    pin6.position = CGPointMake(self.size.width/2 + 100, 720);
+    pin6.position = CGPointMake(self.size.width/2 + 100, 820);
     
     [self addChild:pin6];
     
@@ -411,7 +411,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin7.physicsBody.affectedByGravity = NO;
     
-    pin7.position = CGPointMake(self.size.width/2 - 150, 780);
+    pin7.position = CGPointMake(self.size.width/2 - 150, 880);
     
     [self addChild:pin7];
     
@@ -426,7 +426,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin8.physicsBody.affectedByGravity = NO;
     
-    pin8.position = CGPointMake(self.size.width/2 - 50, 780);
+    pin8.position = CGPointMake(self.size.width/2 - 50, 880);
     
     [self addChild:pin8];
     
@@ -441,7 +441,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin9.physicsBody.affectedByGravity = NO;
     
-    pin9.position = CGPointMake(self.size.width/2 + 50, 780);
+    pin9.position = CGPointMake(self.size.width/2 + 50, 880);
     
     [self addChild:pin9];
     
@@ -456,7 +456,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     
     pin10.physicsBody.affectedByGravity = NO;
     
-    pin10.position = CGPointMake(self.size.width/2 + 150, 780);
+    pin10.position = CGPointMake(self.size.width/2 + 150, 880);
     
     [self addChild:pin10];
 }

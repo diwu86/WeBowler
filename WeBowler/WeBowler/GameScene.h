@@ -15,7 +15,7 @@
 
 
 #define BBALL_THRUST 200
-#define PIN_FORCE 10
+#define PIN_FORCE 5
 
 #endif
 @end
