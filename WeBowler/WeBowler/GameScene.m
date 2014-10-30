@@ -287,7 +287,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     gutter1.physicsBody.categoryBitMask = GUTTER1Cat;
     gutter1.physicsBody.collisionBitMask = BBALLCat | EdgeCat;
     gutter1.physicsBody.contactTestBitMask = BBALLCat;
-    gutter1.position = CGPointMake(100, 0);
+    gutter1.position = CGPointMake(75, 0);
     
     
     gutter2.name = @"gutter2";
@@ -300,7 +300,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     gutter2.physicsBody.categoryBitMask = GUTTER1Cat;
     gutter2.physicsBody.collisionBitMask = BBALLCat | EdgeCat;
     gutter2.physicsBody.contactTestBitMask = BBALLCat;
-    gutter2.position = CGPointMake(668, 0);
+    gutter2.position = CGPointMake(693, 0);
     
     //gutter1.position = CGPointMake(gutter1.size.width/2, gutter1.size.height/2);
     //gutter2.position = CGPointMake(gutter1.size.width/2, gutter1.size.height/2);
@@ -312,17 +312,79 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
 
 -(void)readPins
 {
-    SKNode* pin_node1 = [self findPin:1];
-    //SKNode* pin_node2 = [self findPin:2];
-    //SKNode* pin_node3 = [self findPin:3];
-    //SKNode* pin_node4 = [self findPin:4];
-    //SKNode* pin_node5 = [self findPin:5];
     
-    //If oin is off the screen remove it
-    if(pin_node1.position.y < 0 || pin_node1.position.y > 768 || pin_node1.position.x < 0 || pin_node1.position.x > 1024)
+    
+    SKNode *pin1 = [self childNodeWithName:(NSString *)@"pin1"];
+    SKNode *pin2 = [self childNodeWithName:(NSString *)@"pin2"];
+    SKNode *pin3 = [self childNodeWithName:(NSString *)@"pin3"];
+    SKNode *pin4 = [self childNodeWithName:(NSString *)@"pin4"];
+    SKNode *pin5 = [self childNodeWithName:(NSString *)@"pin5"];
+    SKNode *pin6 = [self childNodeWithName:(NSString *)@"pin6"];
+    SKNode *pin7 = [self childNodeWithName:(NSString *)@"pin7"];
+    SKNode *pin8 = [self childNodeWithName:(NSString *)@"pin8"];
+    SKNode *pin9 = [self childNodeWithName:(NSString *)@"pin9"];
+    SKNode *pin10 = [self childNodeWithName:(NSString *)@"pin10"];
+    
+    //If pin is off the screen remove it
+    if(pin1.position.y < 0 || pin1.position.y > 1000 || pin1.position.x < 0 || pin1.position.x > 1024)
     {
-        [pin_node1 removeFromParent];
+        [pin1 removeFromParent];
     }
+    if(pin2.position.y < 0 || pin2.position.y > 1000 || pin2.position.x < 0 || pin2.position.x > 1024)
+    {
+        [pin2 removeFromParent];
+    }
+    if(pin3.position.y < 0 || pin3.position.y > 1000 || pin3.position.x < 0 || pin3.position.x > 1024)
+    {
+        [pin3 removeFromParent];
+    }
+    if(pin4.position.y < 0 || pin4.position.y > 1000 || pin4.position.x < 0 || pin4.position.x > 1024)
+    {
+        [pin4 removeFromParent];
+    }
+    if(pin5.position.y < 0 || pin5.position.y > 1000 || pin5.position.x < 0 || pin5.position.x > 1024)
+    {
+        [pin5 removeFromParent];
+    }
+    if(pin6.position.y < 0 || pin6.position.y > 1000 || pin6.position.x < 0 || pin6.position.x > 1024)
+    {
+        [pin6 removeFromParent];
+    }
+    if(pin7.position.y < 0 || pin7.position.y > 1000 || pin7.position.x < 0 || pin7.position.x > 1024)
+    {
+        [pin7 removeFromParent];
+    }
+    if(pin8.position.y < 0 || pin8.position.y > 1000 || pin8.position.x < 0 || pin8.position.x > 1024)
+    {
+        [pin8 removeFromParent];
+    }
+    if(pin9.position.y < 0 || pin9.position.y > 1000 || pin9.position.x < 0 || pin9.position.x > 1024)
+    {
+        [pin9 removeFromParent];
+    }
+    if(pin10.position.y < 0 || pin10.position.y > 1000 || pin10.position.x < 0 || pin10.position.x > 1024)
+    {
+        [pin10 removeFromParent];
+    }
+
+    
+    if(!pin1 &&
+       !pin2 &&
+       !pin3 &&
+       !pin4 &&
+       !pin5 &&
+       !pin6 &&
+       !pin7 &&
+       !pin8 &&
+       !pin9 &&
+       !pin10 )
+    {
+        
+        
+        // Add Pins
+        [self addPins];
+    }
+    
     
 }
 
