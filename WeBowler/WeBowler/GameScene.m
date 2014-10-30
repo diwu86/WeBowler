@@ -156,7 +156,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
         
         
         
-        SKAction *followline = [SKAction followPath:path asOffset:YES orientToPath:NO duration:10.0];
+        SKAction *followline = [SKAction followPath:path asOffset:YES orientToPath:NO duration:5.0];
         [node runAction:[SKAction sequence:@[followline]]];
         [node removeFromParent];
         [self addBBall];
