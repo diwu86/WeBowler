@@ -136,6 +136,35 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
 -(void) didEndContact:(SKPhysicsContact *)contact
 {
     NSLog(@"end contact");
+    
+    SKNode* node = [self findBBall];
+    
+    if(node.position.x < 350 || node.position.x > 500)
+    {
+        CGMutablePathRef path = CGPathCreateMutable();
+        
+        if(node.position.x < 350)
+        {
+            CGPathMoveToPoint(path, NULL, node.position.x, node.position.y);
+            CGPathAddLineToPoint(path, NULL, node.position.x, 2000);
+        }
+        if(node.position.x > 500)
+        {
+            CGPathMoveToPoint(path, NULL, node.position.x, node.position.y);
+            CGPathAddLineToPoint(path, NULL, node.position.x, 2000);
+        }
+        
+        
+        
+        SKAction *followline = [SKAction followPath:path asOffset:YES orientToPath:NO duration:10.0];
+        [node runAction:[SKAction sequence:@[followline]]];
+        [node removeFromParent];
+        [self addBBall];
+        
+        SKNode* node = [self findBBall];
+        [node runAction:[SKAction sequence:@[followline]]];
+    }
+
 }
 
 
