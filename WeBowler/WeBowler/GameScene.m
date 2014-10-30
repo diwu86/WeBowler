@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "Score.h"
 
 typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     BBALLCat = 1 << 0, // 0001 = 1
@@ -40,6 +41,11 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     SKLabelNode * _hitLabel;
     SKTexture* _pin1Texture;
     int _hits;
+    Score *score;
+    int _firstRoll;
+    int _secondRoll;
+    int _thirdRoll;
+    int _frame;
 }
 
 
@@ -60,6 +66,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     if (!self.contentCreated)
     {
         [self createSceneContents];
+        _frame = 1;
+        score = [[Score alloc] init];
         self.contentCreated = YES;
     }
     
@@ -117,7 +125,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
 -(void) didRegisterHit
 {
     
-    _hitLabel.text = [NSString stringWithFormat:@"Hits: %d", ++_hits];
+    _hitLabel.text = [NSString stringWithFormat:@"Hits: %d", _hits];
     
     
     /*
@@ -159,7 +167,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
         SKAction *followline = [SKAction followPath:path asOffset:YES orientToPath:NO duration:5.0];
         [node runAction:[SKAction sequence:@[followline]]];
         [node removeFromParent];
-        [self addBBall];
+        [self nextTurn];
         
         SKNode* node = [self findBBall];
         [node runAction:[SKAction sequence:@[followline]]];
@@ -232,6 +240,48 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     self.scaleMode = SKSceneScaleModeAspectFit;
 }
 
+-(void) nextTurn
+{
+    [self addBBall];
+    [self didRegisterHit];
+    if (_hits == 10)
+    {
+        [score AddStrikeToScore];
+        [self clearPins];
+        [self addPins];
+        _frame++;
+    }
+    else if (_hits < 10)
+    {
+        if(_firstRoll == nil)
+        {
+            _firstRoll = _hits;
+        }
+        else if (_frame < 10)
+        {
+            _secondRoll = _hits;
+            [score AddFrameToScore:_firstRoll secondThrow:_secondRoll];
+            _firstRoll = nil;
+            _secondRoll = nil;
+            [self clearPins];
+            [self addPins];
+            _frame++;
+        }
+        //else frame ==10 && _firstRoll+_hits < 10
+    }
+    int gameScore = [score GetScore];
+    NSString* scoreMessage = [NSString stringWithFormat:@"Frame: %d\nLast roll: %d\nCurrent score: %d",_frame-1,_hits,gameScore];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Score"
+                                                    message:scoreMessage
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+    _hits = 0;
+}
+
 -(void)readdBBall
 {
     SKNode* node = [self findBBall];
@@ -240,7 +290,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     if(node.position.y < 0 || node.position.y > 1024 || node.position.x < 0 || node.position.x > 768)
     {
         [node removeFromParent];
-        [self addBBall];
+        [self nextTurn];
     }
     
 }
@@ -329,42 +379,52 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     if(pin1.position.y < 0 || pin1.position.y > 1000 || pin1.position.x < 0 || pin1.position.x > 1024)
     {
         [pin1 removeFromParent];
+        _hits++;
     }
     if(pin2.position.y < 0 || pin2.position.y > 1000 || pin2.position.x < 0 || pin2.position.x > 1024)
     {
         [pin2 removeFromParent];
+        _hits++;
     }
     if(pin3.position.y < 0 || pin3.position.y > 1000 || pin3.position.x < 0 || pin3.position.x > 1024)
     {
         [pin3 removeFromParent];
+        _hits++;
     }
     if(pin4.position.y < 0 || pin4.position.y > 1000 || pin4.position.x < 0 || pin4.position.x > 1024)
     {
         [pin4 removeFromParent];
+        _hits++;
     }
     if(pin5.position.y < 0 || pin5.position.y > 1000 || pin5.position.x < 0 || pin5.position.x > 1024)
     {
         [pin5 removeFromParent];
+        _hits++;
     }
     if(pin6.position.y < 0 || pin6.position.y > 1000 || pin6.position.x < 0 || pin6.position.x > 1024)
     {
         [pin6 removeFromParent];
+        _hits++;
     }
     if(pin7.position.y < 0 || pin7.position.y > 1000 || pin7.position.x < 0 || pin7.position.x > 1024)
     {
         [pin7 removeFromParent];
+        _hits++;
     }
     if(pin8.position.y < 0 || pin8.position.y > 1000 || pin8.position.x < 0 || pin8.position.x > 1024)
     {
         [pin8 removeFromParent];
+        _hits++;
     }
     if(pin9.position.y < 0 || pin9.position.y > 1000 || pin9.position.x < 0 || pin9.position.x > 1024)
     {
         [pin9 removeFromParent];
+        _hits++;
     }
     if(pin10.position.y < 0 || pin10.position.y > 1000 || pin10.position.x < 0 || pin10.position.x > 1024)
     {
         [pin10 removeFromParent];
+        _hits++;
     }
 
     
@@ -385,13 +445,25 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
         [self addPins];
     }
     
-    
+}
+
+-(void) clearPins
+{
+    for (int i=1; i<11; i++)
+    {
+        __block SKNode *pin = [self findPin:i];
+        if (pin != nil)
+        {
+            [pin removeFromParent];
+        }
+    }
 }
 
 -(SKNode *) findPin: (int) number
 {
     __block SKNode *pin1 = nil;
-    [self enumerateChildNodesWithName:@"pin1" usingBlock:^(SKNode *node, BOOL *stop) {
+    NSString* pinnumber = [NSString stringWithFormat:@"pin%d", number];
+    [self enumerateChildNodesWithName:pinnumber usingBlock:^(SKNode *node, BOOL *stop) {
         pin1 = node;
     }];
     return pin1;
