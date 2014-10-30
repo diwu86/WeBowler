@@ -315,7 +315,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin1.physicsBody.dynamic = YES;
     pin1.physicsBody.restitution = 1.0;
     pin1.physicsBody.categoryBitMask = Pin1Cat;
-    pin1.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin1.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin1.physicsBody.affectedByGravity = NO;
     
@@ -330,7 +330,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin2.physicsBody.dynamic = YES;
     pin2.physicsBody.restitution = 1.0;
     pin2.physicsBody.categoryBitMask = Pin1Cat;
-    pin2.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin2.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin2.physicsBody.affectedByGravity = NO;
     
@@ -346,7 +346,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin3.physicsBody.dynamic = YES;
     pin3.physicsBody.restitution = 1.0;
     pin3.physicsBody.categoryBitMask = Pin1Cat;
-    pin3.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin3.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin3.physicsBody.affectedByGravity = NO;
     
@@ -361,8 +361,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin4.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin4.size.width/2];
     pin4.physicsBody.dynamic = YES;
     pin4.physicsBody.restitution = 1.0;
-    pin4.physicsBody.categoryBitMask = Pin1Cat;
-    pin4.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin4.physicsBody.categoryBitMask = Pin4Cat;
+    pin4.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin4.physicsBody.affectedByGravity = NO;
     
@@ -376,8 +376,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin5.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin5.size.width/2];
     pin5.physicsBody.dynamic = YES;
     pin5.physicsBody.restitution = 1.0;
-    pin5.physicsBody.categoryBitMask = Pin1Cat;
-    pin5.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin5.physicsBody.categoryBitMask = Pin5Cat;
+    pin5.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin5.physicsBody.affectedByGravity = NO;
     
@@ -391,8 +391,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin6.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin6.size.width/2];
     pin6.physicsBody.dynamic = YES;
     pin6.physicsBody.restitution = 1.0;
-    pin6.physicsBody.categoryBitMask = Pin1Cat;
-    pin6.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin6.physicsBody.categoryBitMask = Pin6Cat;
+    pin6.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin6.physicsBody.affectedByGravity = NO;
     
@@ -406,8 +406,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin7.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin7.size.width/2];
     pin7.physicsBody.dynamic = YES;
     pin7.physicsBody.restitution = 1.0;
-    pin7.physicsBody.categoryBitMask = Pin1Cat;
-    pin7.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin7.physicsBody.categoryBitMask = Pin7Cat;
+    pin7.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin7.physicsBody.affectedByGravity = NO;
     
@@ -421,8 +421,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin8.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin8.size.width/2];
     pin8.physicsBody.dynamic = YES;
     pin8.physicsBody.restitution = 1.0;
-    pin8.physicsBody.categoryBitMask = Pin1Cat;
-    pin8.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin8.physicsBody.categoryBitMask = Pin8Cat;
+    pin8.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin8.physicsBody.affectedByGravity = NO;
     
@@ -436,8 +436,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin9.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin9.size.width/2];
     pin9.physicsBody.dynamic = YES;
     pin9.physicsBody.restitution = 1.0;
-    pin9.physicsBody.categoryBitMask = Pin1Cat;
-    pin9.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin9.physicsBody.categoryBitMask = Pin9Cat;
+    pin9.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin9.physicsBody.affectedByGravity = NO;
     
@@ -451,8 +451,8 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     pin10.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:pin10.size.width/2];
     pin10.physicsBody.dynamic = YES;
     pin10.physicsBody.restitution = 1.0;
-    pin10.physicsBody.categoryBitMask = Pin1Cat;
-    pin10.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat;
+    pin10.physicsBody.categoryBitMask = Pin10Cat;
+    pin10.physicsBody.collisionBitMask = GUTTER1Cat | EdgeCat | BBALLCat | Pin1Cat;
     
     pin10.physicsBody.affectedByGravity = NO;
     
