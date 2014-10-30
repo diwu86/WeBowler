@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "Score.h"
 
 typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     BBALLCat = 1 << 0, // 0001 = 1
@@ -40,6 +41,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     SKLabelNode * _hitLabel;
     SKTexture* _pin1Texture;
     int _hits;
+    Score *score;
 }
 
 
@@ -60,6 +62,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
     if (!self.contentCreated)
     {
         [self createSceneContents];
+        score = [[Score alloc] init];
         self.contentCreated = YES;
     }
     
@@ -117,7 +120,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
 -(void) didRegisterHit
 {
     
-    _hitLabel.text = [NSString stringWithFormat:@"Hits: %d", ++_hits];
+    _hitLabel.text = [NSString stringWithFormat:@"Hits: %d", _hits];
     
     
     /*
@@ -283,24 +286,27 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
 
 -(void)readPins
 {
-    SKNode* pin_node1 = [self findPin:1];
-    //SKNode* pin_node2 = [self findPin:2];
-    //SKNode* pin_node3 = [self findPin:3];
-    //SKNode* pin_node4 = [self findPin:4];
-    //SKNode* pin_node5 = [self findPin:5];
-    
-    //If oin is off the screen remove it
-    if(pin_node1.position.y < 0 || pin_node1.position.y > 768 || pin_node1.position.x < 0 || pin_node1.position.x > 1024)
+    //int count = 0;
+    for (int i=1; i<11; i++)
     {
-        [pin_node1 removeFromParent];
+        SKNode* pin_node = [self findPin:i];
+        
+        //If pin is off the screen remove it
+        if(pin_node.position.y < 0 || pin_node.position.y > 900 || pin_node.position.x < 0 || pin_node.position.x > 1024 || pin_node.hasActions)
+        {
+            [pin_node removeFromParent];
+            _hits++;
+        }
     }
+    
     
 }
 
 -(SKNode *) findPin: (int) number
 {
     __block SKNode *pin1 = nil;
-    [self enumerateChildNodesWithName:@"pin1" usingBlock:^(SKNode *node, BOOL *stop) {
+    NSString *pinnumber = [NSString stringWithFormat:@"pin%d",number];
+    [self enumerateChildNodesWithName:pinnumber usingBlock:^(SKNode *node, BOOL *stop) {
         pin1 = node;
     }];
     return pin1;
