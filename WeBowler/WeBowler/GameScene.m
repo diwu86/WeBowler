@@ -143,7 +143,7 @@ typedef NS_OPTIONS(uint32_t, PMPhysicsCategory) {
 {
     // Get the textures
     _atlas = [SKTextureAtlas atlasNamed:@"gameTextures"];
-    _bballTexture = [_atlas textureNamed:@"red_ball.png"];
+    _bballTexture = [_atlas textureNamed:@"Bowling.png"];
     _gutter1Texture = [_atlas textureNamed:@"gutter1.png"];
     _gutter2Texture = [_atlas textureNamed:@"gutter1.png"];
     _pin1Texture = [_atlas textureNamed:@"pin.png"];
