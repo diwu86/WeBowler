@@ -25,7 +25,7 @@ namespace WebApplication3.Controllers
         private static string realmId = "";
         private static string secret = "";
         private static string oauth_verifier = "";
-        private static string instanceToken = "OBA8QXeYfiqZ1e9t8halR7W2cM5AzrvGDM7X3IUdk3I";
+        private static string instanceToken = "";
 
         // GET: Contacts
         public async System.Threading.Tasks.Task<ActionResult> Index()
